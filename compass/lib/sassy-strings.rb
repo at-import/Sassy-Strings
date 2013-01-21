@@ -4,7 +4,7 @@ Compass::Frameworks.register("sassy-strings", :path => "#{File.dirname(__FILE__)
 # Sassy String Functions
 module Sass::Script::Functions
   def str_replace(needle, replace, haystack)
-    result = haystack.value.gsub(needle.value, replace.value)
+    result = haystack.value.to_s.gsub(needle.value.to_s, replace.value.to_s)
     Sass::Script::String.new(result)
   end
 
