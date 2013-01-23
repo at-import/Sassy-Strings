@@ -11,12 +11,12 @@ module Sass::Script::Functions
 
   # Split String
   def split_string(string, key)
-    items = string.value.split(/\s+#{Regexp.escape(key.value)}\s+/)
-      if items.count == 1
-        Sass::Script::Bool.new(false)
-      else
-        Sass::Script::List.new(items.map{|i| Sass::Script::String.new(i)}, :comma)
-      end
+    items = string.value.split(key.value)
+    if items.count == 1
+      Sass::Script::Bool.new(false)
+    else
+      Sass::Script::List.new(items.map{|i| Sass::Script::String.new(i)}, :comma)
+    end
   end
 
   # String Position
@@ -43,7 +43,7 @@ end
 
 module SassyStrings
 
-  VERSION = "0.3"
+  VERSION = "0.3.1"
   DATE = "2013-01-23"
 
 end
