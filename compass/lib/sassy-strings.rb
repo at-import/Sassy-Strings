@@ -11,12 +11,12 @@ module Sass::Script::Functions
 
   # Split String
   def split_string(string, key)
-    items = string.value.split(key.value)
-    if items.count == 1
-      Sass::Script::Bool.new(false)
-    else
-      Sass::Script::List.new(items.map{|i| Sass::Script::String.new(i)}, :comma)
-    end
+    items = string.value.split(/\s+#{Regexp.escape(key.value)}\s+/)
+      if items.count == 1
+        Sass::Script::Bool.new(false)
+      else
+        Sass::Script::List.new(items.map{|i| Sass::Script::String.new(i)}, :comma)
+      end
   end
 
   # String Position
@@ -28,11 +28,22 @@ module Sass::Script::Functions
     end
   end
 
+  # Converts a String to a Number
+  def str_to_number(string)
+    result = Sass::Script::Parser.parse(string.value, string.line || 0, 0)
+    case result
+    when Sass::Script::Number
+      result
+    else
+      raise Sass::SyntaxError, "#{string.to_sass} is not a number"
+    end
+  end
+
 end
 
 module SassyStrings
 
-  VERSION = "0.2.1"
-  DATE = "2013-01-22"
+  VERSION = "0.3"
+  DATE = "2013-01-23"
 
 end
