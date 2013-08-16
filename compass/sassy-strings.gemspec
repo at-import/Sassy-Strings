@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   # Project Description
   s.description = "Superpower Strings!"
   s.summary = "Advanced String handling for Sass"
+  s.license = "MIT"
 
   # Files to Include
   s.files  =  Dir.glob("lib/**/*.*")
