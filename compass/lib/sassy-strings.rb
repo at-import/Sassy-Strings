@@ -220,7 +220,7 @@ end
 
 module SassyStrings
 
-  VERSION = "0.4.0"
+  VERSION = "1.0.0"
   DATE = "2013-08-16"
 
 end
