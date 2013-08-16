@@ -1,4 +1,4 @@
-@debug str-replace('Hello', 'Goodbye', 'Hello World');
+@debug str-replace('Hello World', 'World', 'Goodbye');
 @debug split-string('Hello World', ' ');
 @debug str-split('Hello World', ' ');
 @debug str-pos('ello', 'hello');
