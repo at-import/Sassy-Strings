@@ -1,6 +1,14 @@
-@debug str_replace('Hello', 'Goodbye', 'Hello World');
-@debug split_string('Hello World', ' ');
+@debug str-replace('Hello', 'Goodbye', 'Hello World');
+@debug split-string('Hello World', ' ');
+@debug str-split('Hello World', ' ');
 @debug str-pos('ello', 'hello');
 @debug str-pos('l', 'hello');
 @debug str-pos('he', 'hello');
 @debug str-pos('a', 'hello');
+@debug str-length('foo');
+@debug str-insert('abcd', 'X', 4);
+@debug str-extract("abcd", 2, -2);
+@debug to-upper-case("abcd");
+@debug to-uppercase('ABCD');
+@debug to-lower-case('ABCD');
+@debug to-lowercase('abcd');
